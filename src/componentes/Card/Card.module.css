@@ -6,6 +6,14 @@
     border-radius: 9px 9px 0 0;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .3s ease-in-out;
+}
+
+.card:hover {
+    scale: 1.05;
+    transition: .4s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
 }
 
 .card h2 {
@@ -19,7 +27,7 @@
 }
 
 .card p {
-    padding: 24px;
+    padding: 15px;
     font-family: "Arial", sans-serif;
     color: #333;
     font-size: 1.15rem;
