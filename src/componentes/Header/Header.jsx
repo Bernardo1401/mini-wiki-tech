@@ -8,6 +8,9 @@ export default function Header() {
             <ul>
                 <li><a href="../framework">Framework</a></li>
                 <li><a href="/meta-framework">Meta-framework</a></li>
+                <li><a href="./bibliotecas">Bibliotecas de Estilos</a></li>
+                <li><a href="">Next.js 15</a></li>
+                <li><a href="/julia">App Router</a></li>
             </ul>
         </div>
     );
