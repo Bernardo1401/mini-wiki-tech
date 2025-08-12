@@ -6,7 +6,7 @@ export default function Header() {
             <h1>Pesquisa Técnica 🔍</h1>
 
             <ul>
-                <li><a href="">Framework</a></li>
+                <li><a href="../framework">Framework</a></li>
                 <li><a href="">Meta-framework</a></li>
                 <li><a href="">Bibliotecas de Estilos</a></li>
                 <li><a href="">Next.js 15</a></li>
