@@ -6,7 +6,12 @@ export default function NextJs15Page() {
         <div>
             <Header />
             <div className={styles.container}>
-                <h1 className={styles.titulo}>Next.js 15</h1>
+            <img 
+                    src="/img/nextjs.png" 
+                    alt="Next.js 15 Logo" 
+                    className={styles.tituloImagem} 
+                />
+
 
                 {/* Card: Ponto Forte */}
                 <div className={styles.card}>
