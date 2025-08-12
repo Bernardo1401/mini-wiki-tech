@@ -1,19 +1,38 @@
 import styles from "./page.module.css";
 import Header from "../componentes/Header/Header"
-import Card from "../componentes/Card/Card";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
-
+        <h2>Equipe de Pesquisadores 🕵🏾‍♂️</h2>
       <div className={styles.main}>
-        <Card
-        titulo="1. Definição"
-        info="Um meta-framework é um framework que não parte do zero, mas sim constrói em cima de outro framework ou conjunto de bibliotecas, adicionando abstrações, ferramentas e padrões para facilitar o desenvolvimento.
-Ele funciona como um framework de frameworks, oferecendo estrutura, convenções e integrações pré-configuradas.
-Exemplo simples: enquanto um framework fornece tijolos, o meta-framework entrega a casa parcialmente pronta, com encanamento, energia e portas instaladas."
-        />
+
+        <div className={styles.perfil}>
+          <img src="https://avatars.githubusercontent.com/u/158209610?v=4" alt="" />
+          <h3>Bernardo</h3>
+        </div>
+
+        <div className={styles.perfil}>
+          <img src="https://avatars.githubusercontent.com/u/197772966?v=4" alt="" />
+          <h3>Caio</h3>
+        </div>
+
+        <div className={styles.perfil}>
+          <img src="https://avatars.githubusercontent.com/u/158210661?v=4" alt="" />
+          <h3>Julia</h3>
+        </div>
+
+        <div className={styles.perfil}>
+          <img src="https://avatars.githubusercontent.com/u/158209483?v=4" alt="" />
+          <h3>Kevin</h3>
+        </div>
+
+
+        <div className={styles.perfil}>
+          <img src="https://avatars.githubusercontent.com/u/158210596?v=4" alt="" />
+          <h3>Luiza</h3>
+        </div>
       </div>
     </div>
   );
