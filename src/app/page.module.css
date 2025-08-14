@@ -1,40 +1,317 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-.container h2 {
-    margin-top: 3%;
-    font-size: 2rem;
+.heroSection {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #17a2b8 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+.heroDescription {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.heroStats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    min-width: 120px;
+}
+
+.statNumber {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.teamSection {
+    padding: 80px 20px;
+    background: white;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.sectionSubtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main {
-    padding: 10px;
-    margin-top: 2%;
-    display: flex;
-    width: 60%;
-    justify-content: center;
-    gap: 4rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .perfil {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+
+.perfilCard {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.perfilCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #28a745, #20c997, #17a2b8);
+}
+
+.perfilCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .perfil img {
-    width: 100%;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     filter: grayscale(100%);
-    transition: .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 1.5rem;
+    border: 4px solid #f8f9fa;
 }
 
-.perfil img:hover {
+.perfilCard:hover img {
     filter: grayscale(0%);
-    transform: translateY(-10px);
-    transition: .3s ease-in-out;
+    transform: scale(1.05);
+    border-color: #28a745;
+}
+
+.perfilInfo h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.perfilRole {
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.perfilTechs {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.perfilTechs span {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+
+.ctaSection {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+    color: white;
+    text-align: center;
+}
+
+.ctaContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ctaContent h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.ctaContent p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.ctaButtons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ctaButton {
+    display: inline-block;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+    background: linear-gradient(135deg, #218838, #17a2b8);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+    
+    .heroDescription {
+        font-size: 1.1rem;
+    }
+    
+    .heroStats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .stat {
+        padding: 1.5rem;
+        min-width: auto;
+    }
+    
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+    
+    .main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .ctaButtons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 60px 15px;
+    }
+    
+    .heroTitle {
+        font-size: 2rem;
+    }
+    
+    .heroDescription {
+        font-size: 1rem;
+    }
+    
+    .teamSection, .ctaSection {
+        padding: 60px 15px;
+    }
+    
+    .perfilCard {
+        padding: 1.5rem;
+    }
+    
+    .perfil img {
+        width: 100px;
+        height: 100px;
+    }
 }

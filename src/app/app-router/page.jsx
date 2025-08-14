@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import PesquisaComSaibaMais from '../../componentes/Cardju/CardAppRouter';
 import Header from '../../componentes/Header/Header'; 
 import styles from '../../componentes/Cardju/CardAppRouter.module.css';
+import pageStyles from './julia.module.css';
+import Image from 'next/image';
 
 const PageJu = () => {
   const [cardAberto, setCardAberto] = useState(null); 
@@ -15,6 +17,48 @@ const PageJu = () => {
   return (
     <>
       <Header />
+      <div className={pageStyles.banner}>
+        <div className={pageStyles.bannerBackground}>
+          <Image
+            src="/img/nextjs.png"
+            alt="Next.js Logo"
+            width={200}
+            height={120}
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </div>
+        
+        <div className={pageStyles.bannerContent}>
+          <h1 className={pageStyles.bannerTitle}>
+            Arquivos Especiais do Next.js
+          </h1>
+          
+          <p className={pageStyles.bannerDescription}>
+            Explore os principais arquivos especiais do Next.js App Router e entenda como cada um contribui 
+            para a estrutura e funcionalidade da sua aplicação.
+          </p>
+          
+          <div className={pageStyles.bannerStats}>
+            <div className={pageStyles.bannerStat}>
+              <span>📁 5 Arquivos Especiais</span>
+            </div>
+            <div className={pageStyles.bannerStat}>
+              <span>⚡ Next.js App Router</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={pageStyles.introSection}>
+        <h2 className={pageStyles.introTitle}>
+          Domine os Fundamentos
+        </h2>
+        <p className={pageStyles.introDescription}>
+          Cada arquivo especial no Next.js App Router tem um propósito específico. Clique em "Saiba Mais" 
+          para explorar exemplos práticos e entender como implementá-los em seus projetos.
+        </p>
+      </div>
+
       <div className={styles.cardGrid}>
         <PesquisaComSaibaMais
           id={1}
@@ -105,7 +149,7 @@ export default function NotFound() {
           conteudo1={`
 A função do error.js no Next.js (App Router) é tratar erros específicos que acontecem dentro de uma rota ou componente. Quando algum erro ocorre nessa rota, o error.js permite exibir uma interface personalizada de erro, sem que o problema afete outras partes da aplicação. Isso ajuda a fornecer um feedback claro e localizado para o usuário, mantendo o restante da aplicação funcionando normalmente.`}
           titulo2="global-error.js"
-          conteudo2={`A função do global-error.js no Next.js (App Router) é capturar e tratar erros globais que acontecem em toda a aplicação, especialmente aqueles que não são tratados localmente por arquivos error.js. Ele funciona como um fallback geral para evitar que a aplicação quebre completamente, exibindo uma tela de erro amigável e garantindo que o usuário tenha uma mensagem clara mesmo em falhas críticas, como erros no layout global ou na página inicial.`}
+          conteudo2={`O arquivo global-error.js captura erros globais da aplicação que não são tratados por arquivos error.js locais. Ele funciona como fallback para evitar quebras completas, exibindo uma tela de erro amigável em falhas críticas no layout global ou página inicial.`}
           codigo1={`// app/products/[id]/error.js
 'use client';
 
@@ -211,6 +255,26 @@ export default function Page({ params }) {
           onSaibaMais={() => handleSaibaMais(5)}
           ativo={cardAberto === 5}
         />
+      </div>
+
+      <div className={pageStyles.footerSection}>
+        <h3 className={pageStyles.footerTitle}>
+          Continue Aprendendo
+        </h3>
+        <p className={pageStyles.footerDescription}>
+          Estes arquivos especiais são a base para construir aplicações robustas com Next.js. 
+          Pratique implementando cada um deles em seus projetos!
+        </p>
+        <div className={pageStyles.footerTags}>
+          {['Loading.js', 'Not-Found.js', 'Error.js', 'Layout.js', 'Page.js'].map((file, index) => (
+            <span
+              key={index}
+              className={pageStyles.footerTag}
+            >
+              {file}
+            </span>
+          ))}
+        </div>
       </div>
     </>
   );
